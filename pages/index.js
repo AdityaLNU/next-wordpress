@@ -26,7 +26,7 @@ const Home = () => {
         return (
           <div style={{ margin: "20px", borderBottom: "2px solid grey", paddingBottom: "10px", width: "50%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
             <span style={{ margin: "5px" }}>{e.title} <em>by {e.author.name}</em></span>
-            <button style={{ border: "1.5px solid black", borderRadius: "3px", backgroundColor: "white" }}><a target="_blank" href={`${e.URL}`} style={{ textDecoration: "none", color: "black" }}><b>Read More</b></a></button>
+            <button style={{ border: "1.5px solid black", borderRadius: "3px", backgroundColor: "white" }}><a href={`${e.URL}`} style={{ textDecoration: "none", color: "black" }}><b>Read More</b></a></button>
 
           </div>
         )
