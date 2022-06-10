@@ -1,24 +1,9 @@
 
-import axios from "axios";
-import { useState, useEffect } from "react";
-const Home = () => {
 
-  const [data, setData] = useState();
+const Home = ({data}) => {
 
-  const apiCalling = async () => {
-    const options = {
-      method: "GET",
-      url: process.env.NEXT_PUBLIC_API_URL
-    }
-    const res = await axios.request(options);
-    setData(res.data.posts);
-    console.log(res.data.posts)
 
-  }
-
-  useEffect(() => {
-    apiCalling();
-  }, [])
+  console.log(data);
   return (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
       <h1> NEXTJS WordPress example </h1>
@@ -31,8 +16,21 @@ const Home = () => {
           </div>
         )
       }) : "Yet to recieve"}
+      
     </div>
   );
 }
 
+export const getStaticProps = async() =>{
+  const res = await fetch(process.env.NEXT_PUBLIC_API_URL)
+
+  const data = await res.json();
+  return {
+    props: {
+      data:data.posts,
+    },
+   
+    revalidate: 600, // In seconds
+  }
+}
 export default Home;
