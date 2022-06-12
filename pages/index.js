@@ -30,7 +30,7 @@ export const getStaticProps = async() =>{
       data:data.posts,
     },
    
-    revalidate: 180, // In seconds
+    revalidate: 60, // In seconds
   }
 }
 export default Home;
