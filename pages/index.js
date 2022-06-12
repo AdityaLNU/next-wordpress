@@ -3,7 +3,7 @@
 const Home = ({data}) => {
 
 
-  console.log(data);
+  // console.log(data);
   return (
     <div style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
       <h1> NEXTJS WordPress example </h1>
