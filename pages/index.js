@@ -15,7 +15,7 @@ const Home = ({data}) => {
 
           </div>
         )
-      }) : "Yet to recieve"}
+      }) : "Yet to recieve data"}
       
     </div>
   );
