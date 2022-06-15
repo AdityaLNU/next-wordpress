@@ -6,7 +6,7 @@ on:
       - master
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '*/5 * * * *'
+    - cron:  '*/10 * * * *'
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
@@ -35,7 +35,7 @@ jobs:
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: "" # Built app content directory - optional
+          output_location: "/out" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
